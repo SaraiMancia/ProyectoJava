@@ -1,6 +1,8 @@
 
 package Demostracion;
 
+import java.io.InputStream;
+
 public class Ejemplo1 {
 
     public static void main(String[] args) {
@@ -37,5 +39,21 @@ public class Ejemplo1 {
 
     private static void multiplicar(int i, int i0, String mario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static class string {
+
+        public string() {
+        }
+    }
+
+    private static class Scaner {
+
+        public Scaner(InputStream in) {
+        }
+
+        private int nextInt() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
     }
 }
