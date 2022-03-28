@@ -1,64 +1,49 @@
 
 package Ejercicios;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Scanner;
+
 public class Ejercicios5 {
     public static void main(String[] args) {
         Scanner leer=new Scanner(System.in);
+        NumberFormat F=new DecimalFormat("#0.00");
+        
         
         String nombre;
         int minutos;
-        double salario;
+        double Salario;
         
+    
         System.out.println("Ingrese su nombre: ");
         nombre=leer.nextLine();
         System.out.println("Ingrese su salario: ");
-        salario=leer.nextDouble();
+        Salario=leer.nextDouble();
         System.out.println("Ingrese los minutos que ha llegado tarde: ");
         minutos=leer.nextInt();
         
-        System.out.println("Nombre del empleado: "+nombre);
-        System.out.println("El descuento por llegadas tardias: "+Ejercicios5.Minutos(minutos));
+        double DHora,desH=0.0253,SD,renta,Drenta;
 
-        
-        
-    }
-    
-    public static double Minutos(int minutos){
         /*para saber cuanto vale el minuto se hace lo siguiente
         365/30=12.16/8horas=1.52xhora.1.52*60min=0.025333
         */
-       double descuentoHora=0.0253;
-       double DHora;
+        
+        DHora=minutos*desH;
+        
+        SD=Salario-DHora;
+        
+        renta=SD*10/100;
+        
+        Drenta= SD-renta;
+     
+     System.out.println("Nombre del empleado: "+nombre);
+        
+        System.out.println("El descuento por llegadas tardias: "+F.format(DHora));
+        
+        System.out.println("La retencion de la renta es: $"+F.format(renta));
        
-       DHora=minutos*descuentoHora;
-       
-       return DHora;
-        
+        System.out.println("El salario bruto de "+nombre+" es: $"+F.format(Drenta));
     }
-    
-    public static double salario(double salario, double DHora) {
-        double salarioDhora;
-        
-        salarioDhora= salario-DHora;
-        return salarioDhora;
-        
-    }
-    
-    public static double Renta(double salarioDhora) {
-        double renta;
-       
-        renta=salarioDhora*10/100;
-        return renta;
-        
-    }
-    
-    public static double Drenta(double renta, double salarioDHora) {
-        double descuentoRenta;
-        
-       descuentoRenta=salarioDHora-renta;
-       return descuentoRenta;
-        
-    }
-    
+     
 }
